@@ -1,11 +1,12 @@
-import time
+#dependencies
 from bs4 import BeautifulSoup as bs
 from splinter import Browser
+import time
 import pandas as pd
 
 def init_browser():
-    executable_path = {"executable_path": "chromedriver"}
-    return Browser("chrome", **executable_path, headless=False)
+    executable_path = {'executable_path': 'chromedriver'}
+    browser = Browser('chrome', **executable_path, headless=False)
 
 def scrape():
     browser = init_browser()
@@ -15,16 +16,17 @@ def scrape():
     nasaUrl = 'https://mars.nasa.gov/news/'
     browser.visit(nasaUrl)
     html = browser.html
-    time.sleep(6)
+    time.sleep(10)
     soup = bs(html, 'html.parser')
     #variables for news title and paragraph
     articleTitle = soup.find('li',class_='slide').div.h3.text
     articleTeaser = soup.find('div', class_='article_teaser_body').text
 
     #Image url connections
+
     imageUrl = 'https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars'
     browser.visit(imageUrl)
-    time.sleep(3)
+    time.sleep(10)
     html = browser.html
     soup = bs(html, 'html.parser')
 
@@ -32,12 +34,11 @@ def scrape():
     newImageUrl = imageUrl.replace('/spaceimages/?search=&category=Mars', '')
     imageEndPoint= soup.article['style'][23:-3]
     fullImageUrl = newImageUrl + imageEndPoint
-    fullImageUrl
 
     #mars twitter: weather connections
     marsTwitter = 'https://twitter.com/marswxreport?lang=en'
     browser.visit(marsTwitter)
-    time.sleep(3)
+    time.sleep(10)
     html = browser.html
     soup = bs(html, 'html.parser')
 
@@ -52,7 +53,7 @@ def scrape():
     #connection for mars table
     marsTable= 'https://space-facts.com/mars/'
     browser.visit(marsTable)
-    time.sleep(3)
+    time.sleep(10)
     html = browser.html
     soup = bs(html, 'html.parser')
 
@@ -68,6 +69,7 @@ def scrape():
     #Hemisphere url connections
     HemURL = 'https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars'
     browser.visit(HemURL)
+    time.sleep(10)
     html = browser.html
     soup = bs(html, 'html.parser')
 
