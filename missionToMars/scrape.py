@@ -4,22 +4,21 @@ from splinter import Browser
 import time
 import pandas as pd
 
-def init_browser():
-    executable_path = {'executable_path': 'chromedriver'}
-    browser = Browser('chrome', **executable_path, headless=False)
 
 def scrape():
-    browser = init_browser()
-
+    executable_path = {'executable_path': 'chromedriver'}
+    browser = Browser('chrome', **executable_path, headless=False)
 
     #Nasa news and teaser paragraph
     nasaUrl = 'https://mars.nasa.gov/news/'
     browser.visit(nasaUrl)
     html = browser.html
-    time.sleep(10)
     soup = bs(html, 'html.parser')
+    time.sleep(5)
     #variables for news title and paragraph
-    articleTitle = soup.find('li',class_='slide').div.h3.text
+    articleTitle1 = articleTitle = soup.find('li',class_='slide')
+    time.sleep(5)
+    articleTitle = articleTitle1.find('div',class_='content_title').text
     articleTeaser = soup.find('div', class_='article_teaser_body').text
 
     #Image url connections
