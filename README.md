@@ -1,5 +1,6 @@
-# MarsScrape
-This project uses Beautiful Soup to scrape relevant information from the nasa website and twitter. Then uses a mongo database to store the information. Finally uses a flask application and jinja to create a page that represents all of the information that was scraped.
+# Objective:
+The Application Scrapes current news and photos from five different Nasa and Mars related websites,
+consolidates them in a database, then presents them on a single html page.
 
 # Step 1
 Open MissionToMars Folder
