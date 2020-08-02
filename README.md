@@ -17,5 +17,5 @@ The next part of the process is to move away from jupyter notebook and into pyth
 ## Step 3 The Three Amigos FLASK, HTML, and MONGO
 The final step is being able to present all of this information. Final step, step 1 is to create a basic html page that will eventually be able to present all of the pictures, tables, information, etc. from our database. The problem is getting my html page to update when the update button is pressed, in other words how do i get that information from mongo to the html. To solve this I made a flask application. Coding jinja into the html to accept and present the information from the database the project is complete and should Look something like this.
 
-
+![Finished Product](https://github.com/DCMilligan88/MarsScrape/blob/master/missionToMars/preview.PNG)
 
