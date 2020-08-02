@@ -19,3 +19,17 @@ The final step is being able to present all of this information. Final step, ste
 
 ![Finished Product](https://github.com/DCMilligan88/MarsScrape/blob/master/missionToMars/preview.PNG)
 
+# Running it for yourself
+The steps here are pretty easy.
+1. Start with an empty environment (with python installed)
+2. In a bash terminal in the MarsScrape folder type "pip install requirements.txt" to get all of the dependencies needed
+3. In the same terminal navigate to the missionToMars folder and type "python app.py"
+   1. if it was successful you should see *"Running on <ip:port> (Press CTRL+C to quit)"*
+4. There should be a clickable link where your ip and port are displayed to click on it you must hold ctrl and then left click
+5. Once you have clicked the link an html page should open with two options
+6. Clicking "BRING DATA HOME" will run the scrape (give it about 2-3 minutes to run)
+7. Clicking "Clear Data" will clear the page and refresh
+### a couple notes
+1. In the scrape.py file there is a pretty hefty time.sleep(60) on line 19. This is because I was getting a nonetype error on that page. because the scrape was faster then the page could load. if you get a nonetype error try increasing the 60 to something higher, the 60 represents seconds. Conversely if you feel it is taking too long, try to shorten it, you may have a better connection to the internet/faster machine and may find that a minute is too long.
+2. The chromedriver provided may not match the version of chrome that you use. They do need to match. you can either change the version of chrome you are using (not recommended) or you can download an appropriate driver.
+
