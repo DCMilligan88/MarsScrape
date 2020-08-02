@@ -16,7 +16,7 @@ def scrape():
     soup = bs(html, 'html.parser')
     #variables for news title and paragraph
     articleTitle1 = soup.find('li',class_='slide')
-    time.sleep(30)
+    time.sleep(60)
     articleTitle = articleTitle1.find('div',class_='content_title').text
     articleTeaser = soup.find('div', class_='article_teaser_body').text
 
