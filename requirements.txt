@@ -23,7 +23,7 @@ selenium==3.141.0
 six==1.13.0
 soupsieve==2.0.1
 splinter==0.13.0
-urllib3==1.25.9
+urllib3==1.26.5
 Werkzeug==1.0.1
 wincertstore==0.2
 wrapt==1.11.2
